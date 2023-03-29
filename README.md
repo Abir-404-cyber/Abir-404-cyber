@@ -1,16 +1,34 @@
-### Hi there 👋
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digital Clock</title>
+    <style>
+      /* style the clock display */
+      #clock {
+        font-size: 3em;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
 
-<!--
-**GANG43/GANG43** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+    <script>
+      // function to update the clock display
+      function updateClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var timeString = hours.toString().padStart(2, '0') + ':' + 
+                         minutes.toString().padStart(2, '0') + ':' + 
+                         seconds.toString().padStart(2, '0');
+        document.getElementById('clock').innerHTML = timeString;
+      }
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+      // call the updateClock function every second
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>
